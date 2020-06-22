@@ -1,9 +1,13 @@
 import { bytesToHex } from 'web3-utils'
 import { toChecksumAddress } from 'ethereumjs-util'
+import InputDataDecoder from 'ethereum-input-data-decoder'
 
-export default function decodeInput(decoder, input) {
+export default function decodeInput(decoderOrAbi, input) {
+  const decoder = decoderOrAbi.constructor
+    ? decoderOrAbi // Decoder was passed
+    : new InputDataDecoder(decoderOrAbi) // ABI was passed
+
   const data = safeDecode(decoder, input)
-
   if (!data) return null
 
   const paramsObject = data.inputs.reduce((params, curVal, index) => {
@@ -71,14 +75,14 @@ function parseCallValue(val, type) {
   try {
     if (type === 'address') return standardiseAddress(val)
     if (type.includes('address[')) return val.map(a => standardiseAddress(a))
-    if (type === 'string' || type === 'string[]') return val
-    if (type.includes('int[]')) return val.map(v => v.toString())
-    if (type.includes('int256[]')) return val.map(v => v.toString())
-    if (type.includes('int8[]')) return val.map(v => v.toString())
+    if (type === 'string' || type === 'string[') return val
+    if (type.includes('int[')) return val.map(v => v.toString())
+    if (type.includes('int256[')) return val.map(v => v.toString())
+    if (type.includes('int8[')) return val.map(v => v.toString())
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
-    if (type.includes('bytes32[]')) return val.map(b => bytesToHex(b))
-    if (type.includes('bytes[]')) return val.map(b => bytesToHex(b))
+    if (type.includes('bytes32[')) return val.map(b => bytesToHex(b))
+    if (type.includes('bytes[')) return val.map(b => bytesToHex(b))
     if (type.includes('bytes')) return bytesToHex(val)
     throw Error(`Unknown type ${type}`)
   } catch (error) {

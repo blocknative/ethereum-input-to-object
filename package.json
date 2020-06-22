@@ -29,6 +29,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "ethereum-input-data-decoder": "^0.3.0",
     "ethereumjs-util": "^7.0.2",
     "web3-utils": "^1.2.9"
   }
