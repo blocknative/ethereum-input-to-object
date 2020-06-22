@@ -105,7 +105,7 @@ console.log(decoded);
 
 ### Usage in node.js
 
-When ES6 imports are not avaliable, `require` the dependency like this
+When ES6 imports are not avaliable, you may use `require` like this
 
 ```javascript
 const inputToObject = require('ethereum-input-to-object').default
