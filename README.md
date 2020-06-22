@@ -13,7 +13,7 @@ The goal of ethereum-input-to-object is to facilitate dead-simple conversion of 
 Pass an ABI and input to `inputToObject`
 
 ```javascript
-import inputToObject = from 'ethereum-input-to-object';
+import inputToObject from 'ethereum-input-to-object';
 const erc20Abi = [{ ... }];
 const input = '0xa9059cbb0000000000000000000000005a1cb5a88988ca4fef229935db834a6781e873cb0000000000000000000000000000000000000000000000000de0b6b3a7640000';
 const decoded = inputToObject(erc20Abi, input);
@@ -35,7 +35,7 @@ console.log(decoded);
 If the input does not match the ABI, `inputToObject` returns `null`
 
 ```javascript
-import inputToObject = from 'ethereum-input-to-object';
+import inputToObject from 'ethereum-input-to-object';
 const erc20Abi = [{ ... }];
 const input = '0xgarbage';
 const decoded = inputToObject(erc20Abi, input);
@@ -51,7 +51,7 @@ null
 `inputToObject` also supports decoding and conversion of complex, nested Solidity data structures.
 
 ```javascript
-import inputToObject = from 'ethereum-input-to-object';
+import inputToObject from 'ethereum-input-to-object';
 const setProtocolRebalancingExchangeIssuanceV2Abi = [{ ... }];
 const input = '0x16919b9...'; // Truncated for example
 const decoded = inputToObject(erc20Abi, input);
@@ -85,7 +85,7 @@ If you prefer, you may pass a `decoder` created using [ethereum-input-data-decod
 
 ```javascript
 import InputDataDecoder from 'ethereum-input-data-decoder';
-import inputToObject = from 'ethereum-input-to-object';
+import inputToObject from 'ethereum-input-to-object';
 const erc20Abi = [{ ... }];
 const erc20Decoder = new InputDataDecoder(erc20Abi);
 const input = '0xa9059cbb0000000000000000000000005a1cb5a88988ca4fef229935db834a6781e873cb0000000000000000000000000000000000000000000000000de0b6b3a7640000';
