@@ -1,7 +1,7 @@
 import { bytesToHex } from 'web3-utils'
 import { toChecksumAddress } from 'ethereumjs-util'
 
-export default function decodeInputData(decoder, input) {
+export default function decodeInput(decoder, input) {
   const data = safeDecode(decoder, input)
 
   if (!data) return null
@@ -46,7 +46,7 @@ export default function decodeInputData(decoder, input) {
   }
 }
 
-export function safeDecode(decoder, input) {
+function safeDecode(decoder, input) {
   let decodedInput = { method: null }
   try {
     decodedInput = decoder.decodeData(input)
