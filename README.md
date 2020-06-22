@@ -89,18 +89,7 @@ import inputToObject from 'ethereum-input-to-object';
 const erc20Abi = [{ ... }];
 const erc20Decoder = new InputDataDecoder(erc20Abi);
 const input = '0xa9059cbb0000000000000000000000005a1cb5a88988ca4fef229935db834a6781e873cb0000000000000000000000000000000000000000000000000de0b6b3a7640000';
-const decoded = inputToObject(erc20Abi, input);
-console.log(decoded);
-```
-
-```javascript
-{
-  methodName: 'transfer',
-  params: {
-    _to: '0x5A1Cb5A88988cA4FEF229935db834A6781e873cB',
-    _value: '1000000000000000000'
-  }
-}
+const decoded = inputToObject(erc20Decoder, input);
 ```
 
 ### Usage in node.js
