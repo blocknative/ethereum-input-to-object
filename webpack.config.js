@@ -7,6 +7,7 @@ module.exports = {
     filename: 'ethereum-input-to-object.js',
     library: 'ethereum-input-to-object',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   module: {
     rules: [
