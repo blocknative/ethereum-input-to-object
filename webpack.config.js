@@ -2,12 +2,12 @@ const path = require('path')
 
 module.exports = {
   entry: './src/index.js',
+  target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'ethereum-input-to-object.js',
     library: 'ethereum-input-to-object',
     libraryTarget: 'umd',
-    globalObject: 'this',
   },
   module: {
     rules: [
@@ -22,5 +22,4 @@ module.exports = {
     ],
   },
   mode: 'production',
-  node: { fs: 'empty' },
 }
