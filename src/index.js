@@ -3,12 +3,12 @@ import { toChecksumAddress } from 'ethereumjs-util'
 import InputDataDecoder from 'ethereum-input-data-decoder'
 
 export default function decodeInput(decoderOrAbi, input) {
-  const decoder = decoderOrAbi.constructor
-    ? decoderOrAbi // Decoder was passed
-    : new InputDataDecoder(decoderOrAbi) // ABI was passed
+  const decoder = decoderOrAbi.constructor.name === 'Array'
+    ? new InputDataDecoder(decoderOrAbi) // ABI was passed
+    : decoderOrAbi // Decoder was passed
 
   const data = safeDecode(decoder, input)
-  if (!data) return null
+  if (!data || !data.method) return null
 
   const paramsObject = data.inputs.reduce((params, curVal, index) => {
     const type = data.types[index]
