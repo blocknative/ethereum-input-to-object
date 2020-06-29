@@ -2,6 +2,10 @@
 
 Decodes an Ethereum input data hex string into a developer friendly JavaScript object.
 
+## Warning
+
+This package is in alpha, use at your own risk!
+
 ## Aim
 
 The goal of ethereum-input-to-object is to facilitate dead-simple conversion of a transaction input into a JavaScript native, serializable object.
