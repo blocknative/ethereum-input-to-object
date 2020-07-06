@@ -98,10 +98,10 @@ const decoded = inputToObject(erc20Decoder, input);
 
 ### Usage in node.js
 
-When ES6 imports are not avaliable, you may use `require` like this
+When ES6 imports are not avaliable, you may use `require`
 
 ```javascript
-const inputToObject = require('ethereum-input-to-object').default
+const inputToObject = require('ethereum-input-to-object')
 ```
 
 ### Supported types

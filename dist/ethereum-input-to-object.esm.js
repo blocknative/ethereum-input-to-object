@@ -1,10 +1,6 @@
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var web3Utils = require('web3-utils');
-var ethereumjsUtil = require('ethereumjs-util');
-var InputDataDecoder = _interopDefault(require('ethereum-input-data-decoder'));
+import { bytesToHex } from 'web3-utils';
+import { toChecksumAddress } from 'ethereumjs-util';
+import InputDataDecoder from 'ethereum-input-data-decoder';
 
 function decodeInput(decoderOrAbi, input) {
   const decoder = decoderOrAbi.constructor.name === 'Array'
@@ -85,9 +81,9 @@ function parseCallValue(val, type) {
     if (type.includes('int8[')) return val.map(v => v.toString())
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
-    if (type.includes('bytes32[')) return val.map(b => web3Utils.bytesToHex(b))
-    if (type.includes('bytes[')) return val.map(b => web3Utils.bytesToHex(b))
-    if (type.includes('bytes')) return web3Utils.bytesToHex(val)
+    if (type.includes('bytes32[')) return val.map(b => bytesToHex(b))
+    if (type.includes('bytes[')) return val.map(b => bytesToHex(b))
+    if (type.includes('bytes')) return bytesToHex(val)
     throw Error(`Unknown type ${type}`)
   } catch (error) {
     throw Error(
@@ -99,8 +95,8 @@ function parseCallValue(val, type) {
 }
 
 function standardiseAddress(ad) {
-  if (!ad.startsWith('0x')) return ethereumjsUtil.toChecksumAddress(`0x${ad}`)
-  return ethereumjsUtil.toChecksumAddress(ad)
+  if (!ad.startsWith('0x')) return toChecksumAddress(`0x${ad}`)
+  return toChecksumAddress(ad)
 }
 
-module.exports = decodeInput;
+export default decodeInput;
