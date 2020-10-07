@@ -75,7 +75,7 @@ function parseCallValue(val, type) {
   try {
     if (type === 'address') return standardiseAddress(val)
     if (type.includes('address[')) return val.map(a => standardiseAddress(a))
-    if (type === 'string' || type === 'string[') return val
+    if (type === 'string' || type === 'string[]') return val
     if (type.includes('int[')) return val.map(v => v.toString())
     if (type.includes('int256[')) return val.map(v => v.toString())
     if (type.includes('int8[')) return val.map(v => v.toString())
