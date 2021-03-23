@@ -27,7 +27,7 @@
     "rollup": "^2.19.0"
   },
   "dependencies": {
-    "ethereum-input-data-decoder": "git://github.com/blocknative/ethereum-input-data-decoder#nested-tuple-1",
+    "ethereum-input-data-decoder": "git@github.com:alexcampbelling/ethereum-input-data-decoder#fix/nested-tuple-array",
     "ethereumjs-util": "^7.0.2",
     "web3-utils": "^1.2.9"
   }
