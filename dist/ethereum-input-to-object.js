@@ -86,7 +86,7 @@ function parseCallValue(val, type) {
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
     if (type.includes('bytes32[')) return val.map(b => web3Utils.bytesToHex(b))
-    if (type.includes('bytes[')) return val.map(b => b)
+    if (type.includes('bytes[')) return val.map(b => web3Utils.bytesToHex(b))
     if (type.includes('bytes')) return val
     throw Error(`Unknown type ${type}`)
   } catch (error) {
