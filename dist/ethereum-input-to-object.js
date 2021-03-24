@@ -1,6 +1,6 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+function _interopDefault(ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var web3Utils = require('web3-utils');
 var ethereumjsUtil = require('ethereumjs-util');
@@ -22,6 +22,7 @@ function decodeInput(decoderOrAbi, input) {
       const tupleParamNames = data.names[index][1];
       // Handle tuple[] type
       if (type.endsWith(')[]')) {
+        console.log('found tuple array')
         return {
           ...params,
           [tupleName]: [
