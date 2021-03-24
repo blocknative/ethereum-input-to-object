@@ -2,6 +2,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var web3Utils = require('web3-utils');
 var ethereumjsUtil = require('ethereumjs-util');
 var InputDataDecoder = _interopDefault(require('ethereum-input-data-decoder'));
 
@@ -84,7 +85,7 @@ function parseCallValue(val, type) {
     if (type.includes('int8[')) return val.map(v => v.toString())
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
-    if (type.includes('bytes32[')) return val.map(b => b)
+    if (type.includes('bytes32[')) return val.map(b => web3Utils.bytesToHex(b))
     if (type.includes('bytes[')) return val.map(b => b)
     if (type.includes('bytes')) return val
     throw Error(`Unknown type ${type}`)
