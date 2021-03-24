@@ -1,6 +1,6 @@
 {
   "name": "ethereum-input-to-object",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Decodes an Ethereum input data hex string into a developer friendly JavaScript object",
   "main": "dist/ethereum-input-to-object.js",
   "module": "dist/ethereum-input-to-object.esm.js",
