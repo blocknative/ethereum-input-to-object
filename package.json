@@ -5,7 +5,7 @@
   "main": "dist/ethereum-input-to-object.js",
   "module": "dist/ethereum-input-to-object.esm.js",
   "scripts": {
-    "test": "npm run test",
+    "test": "tape ./test/index.js",
     "build": "rollup -c"
   },
   "repository": {
@@ -24,7 +24,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "jest": "^26.0.1",
-    "rollup": "^2.19.0"
+    "rollup": "^2.19.0",
+    "tape": "^4.6.3"
   },
   "dependencies": {
     "ethereum-input-data-decoder": "git@github.com:alexcampbelling/ethereum-input-data-decoder#fix/nested-tuple-array",
