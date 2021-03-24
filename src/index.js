@@ -1,4 +1,3 @@
-import { bytesToHex } from 'web3-utils'
 import { toChecksumAddress } from 'ethereumjs-util'
 import InputDataDecoder from 'ethereum-input-data-decoder'
 
@@ -81,9 +80,9 @@ function parseCallValue(val, type) {
     if (type.includes('int8[')) return val.map(v => v.toString())
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
-    if (type.includes('bytes32[')) return val.map(b => bytesToHex(b))
-    if (type.includes('bytes[')) return val.map(b => bytesToHex(b))
-    if (type.includes('bytes')) return bytesToHex(val)
+    if (type.includes('bytes32[')) return val.map(b => b)
+    if (type.includes('bytes[')) return val.map(b => b)
+    if (type.includes('bytes')) return val
     throw Error(`Unknown type ${type}`)
   } catch (error) {
     throw Error(
