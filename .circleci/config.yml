@@ -1,4 +1,4 @@
-version: 1
+version: 2
 jobs:
   test:
     docker:
@@ -30,7 +30,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
 workflows:
-  version: 1
+  version: 2
   main:
     jobs:
       - lint
