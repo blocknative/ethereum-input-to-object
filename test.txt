@@ -1,0 +1,76 @@
+
+> ethereum-input-to-object@0.0.3 test /home/alexander/Documents/Blocknative_work/misc/ethereum-input-to-object
+> tape ./test/index.js
+
+TAP version 13
+# decoder
+# Checking 1inch v2 swap for bytes type
+ok 1 should be equivalent
+# Checking 1inch v3 unoswap for bytes32[] type
+ok 2 should be equivalent
+# Checking 0x_v3 for bytes[] type
+ok 3 should be equivalent
+# (anonymous)
+{
+  methodName: 'batchCancelOrders',
+  params: {
+    orders: [
+      {
+        makerAddress: '0xB0dd0Dcada73B715E3B5567ab17bD7f37216A637',
+        takerAddress: '0x0000000000000000000000000000000000000000',
+        feeRecipientAddress: '0x0000000000000000000000000000000000000000',
+        senderAddress: '0x0000000000000000000000000000000000000000',
+        makerAssetAmount: '8570000000000000000',
+        takerAssetAmount: '1122682683600000000000',
+        makerFee: '0',
+        takerFee: '0',
+        expirationTimeSeconds: '1577851327',
+        salt: '1577851087003',
+        makerAssetData: '0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+        takerAssetData: '0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f',
+        makerFeeAssetData: '0x',
+        takerFeeAssetData: '0x'
+      },
+      {
+        makerAddress: '0xB0dd0Dcada73B715E3B5567ab17bD7f37216A637',
+        takerAddress: '0x0000000000000000000000000000000000000000',
+        feeRecipientAddress: '0x0000000000000000000000000000000000000000',
+        senderAddress: '0x0000000000000000000000000000000000000000',
+        makerAssetAmount: '71430000000000000000',
+        takerAssetAmount: '9369109164150000000000',
+        makerFee: '0',
+        takerFee: '0',
+        expirationTimeSeconds: '1577851327',
+        salt: '1577851087001',
+        makerAssetData: '0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+        takerAssetData: '0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f',
+        makerFeeAssetData: '0x',
+        takerFeeAssetData: '0x'
+      },
+      {
+        makerAddress: '0xB0dd0Dcada73B715E3B5567ab17bD7f37216A637',
+        takerAddress: '0x0000000000000000000000000000000000000000',
+        feeRecipientAddress: '0x0000000000000000000000000000000000000000',
+        senderAddress: '0x0000000000000000000000000000000000000000',
+        makerAssetAmount: '283528300234676544440',
+        takerAssetAmount: '37271625297731906650667',
+        makerFee: '0',
+        takerFee: '0',
+        expirationTimeSeconds: '1577851327',
+        salt: '1577851087005',
+        makerAssetData: '0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+        takerAssetData: '0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f',
+        makerFeeAssetData: '0x',
+        takerFeeAssetData: '0x'
+      }
+    ]
+  }
+}
+ok 4 should be equivalent
+
+1..4
+# tests 4
+# pass  4
+
+# ok
+
