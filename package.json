@@ -6,7 +6,8 @@
   "module": "dist/ethereum-input-to-object.esm.js",
   "scripts": {
     "test": "tape ./test/index.js",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
