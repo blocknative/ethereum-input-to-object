@@ -85,9 +85,31 @@ function parseCallValue(val, type) {
     if (type.includes('int8[')) return val.map(v => v.toString())
     if (type.includes('int')) return val.toString()
     if (type.includes('bool')) return val
-    if (type.includes('bytes32[')) return val.map(b => web3Utils.bytesToHex(b))
-    if (type.includes('bytes[')) return val.map(b => web3Utils.bytesToHex(b))
-    if (type.includes('bytes')) return web3Utils.bytesToHex(val)
+
+    // Sometimes our decoder library does not decode bytes correctly and returns buffers
+    // Here we safegaurd this as to not double decode them.
+    if (type.includes('bytes32[')) {
+      return val.map((b) => {
+        if (typeof b === 'string') {
+          return b
+        }
+        return web3Utils.bytesToHex(b)
+      })
+    }
+    if (type.includes('bytes[')) {
+      return val.map((b) => {
+        if (typeof b === 'string') {
+          return b
+        }
+        return web3Utils.bytesToHex(b)
+      })
+    }
+    if (type.includes('bytes')) {
+      if (typeof val === 'string') {
+        return val
+      }
+      return web3Utils.bytesToHex(val)
+    }
     throw Error(`Unknown type ${type}`)
   } catch (error) {
     throw Error(
