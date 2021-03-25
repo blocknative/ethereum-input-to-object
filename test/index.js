@@ -2,7 +2,6 @@
 const fs = require('fs')
 const test = require('tape')
 const InputDataDecoder = require('ethereum-input-data-decoder')
-// const web3Utils = require('web3-utils')
 const decodeInput = require('../dist/ethereum-input-to-object')
 
 test('decoder', (t) => {
