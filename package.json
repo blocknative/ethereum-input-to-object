@@ -28,7 +28,7 @@
     "rollup": "^2.19.0"
   },
   "dependencies": {
-    "ethereum-input-data-decoder": "0.3.0",
+    "ethereum-input-data-decoder": "git@github.com:alexcampbelling/ethereum-input-data-decoder.git",
     "ethereumjs-util": "^7.0.2",
     "web3-utils": "^1.2.9",
     "tape": "^4.6.3"
