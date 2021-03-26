@@ -9,22 +9,22 @@ test('decoder', (t) => {
   // `ethereum-input-data-decoder`, you can point dependency to this to fix this test
   // `git@github.com:alexcampbelling/ethereum-input-data-decoder.git#fix/nested-tuple-array`
 
-  // t.test('Checking 1inch v2 swap for bytes type', (t) => {
-  //   t.plan(1)
+  t.test('Checking 1inch v2 swap for bytes type', (t) => {
+    t.plan(1)
 
-  //   const decoder = new InputDataDecoder(`${__dirname}/data/1inch_exchange_v2_abi.json`)
+    const decoder = new InputDataDecoder(`${__dirname}/data/1inch_exchange_v2_abi.json`)
 
-  //   // This used to have trouble decoding, Eth Asset, WETH in the internals
-  //   // The important part is that the data which is type 'bytes' isn't double decoded
-  //   // https://etherscan.io/tx/0x3693b42398beaf1e367cfe004b6606697764bc99ab1d5c01c300b760034be46c
-  //   const data = fs.readFileSync(`${__dirname}/data/1inch_exchange_v2_assetEth_withWeth.txt`)
-  //   const result = decodeInput(decoder, data)
+    // This used to have trouble decoding, Eth Asset, WETH in the internals
+    // The important part is that the data which is type 'bytes' isn't double decoded
+    // https://etherscan.io/tx/0x3693b42398beaf1e367cfe004b6606697764bc99ab1d5c01c300b760034be46c
+    const data = fs.readFileSync(`${__dirname}/data/1inch_exchange_v2_assetEth_withWeth.txt`)
+    const result = decodeInput(decoder, data)
 
-  //   const expectedSwap = fs.readFileSync(`${__dirname}/data/1inch_v2_expectedSwap.json`)
+    const expectedSwap = fs.readFileSync(`${__dirname}/data/1inch_v2_expectedSwap.json`)
 
-  //   // Ensure v2 swap calls are not double decoding data
-  //   t.deepEquals(result, JSON.parse(expectedSwap))
-  // })
+    // Ensure v2 swap calls are not double decoding data
+    t.deepEquals(result, JSON.parse(expectedSwap))
+  })
 
   t.test('Checking 1inch v3 unoswap for bytes32[] type', (t) => {
     t.plan(1)
