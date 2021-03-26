@@ -84,12 +84,4 @@ test('decoder', (t) => {
     }
     t.deepEquals(result, expectedbatchFillOrders)
   })
-
-  t.test('butt', (t) => {
-    t.plan(1)
-
-    const input = '0xa9059cbb000000000000000000000000b10a61daa9a87ffcbb444417dd69a3933c617bd60000000000000000000000000000000000000000000000000f67831e74af0000'
-
-    t.deepEquals(1, 1)
-  })
 })
